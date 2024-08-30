@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# Multi-Step Form Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a multi-step form built with React that allows users to input and validate their personal and address information across multiple steps. The form includes data validation, error handling, state management, and local storage persistence. Additionally, the form is responsive and includes animations between steps, enhancing the user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Three-Step Form**:
+  - **Step 1: Personal Information** - Collects the user's name, email, and phone number.
+  - **Step 2: Address Information** - Collects the user's address details including address line 1, address line 2, city, state, and zip code.
+  - **Step 3: Confirmation** - Displays all entered data for review before submission.
+- **Navigation and Buttons**:
 
-### `npm start`
+  - Tabbed navigation to move between form steps.
+  - Disables the back button on the first step.
+  - Disables the next button on the last step, replacing it with a submit button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Form Validation**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - Ensures all fields are filled in before allowing navigation to the next step.
+  - Displays error messages and highlights fields with errors.
 
-### `npm test`
+- **State Management**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Manages form data using React state with `useState` and `useEffect` hooks.
+  - Reflects user inputs and form navigation in state updates.
 
-### `npm run build`
+- **Local Storage**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - Persists form data to local storage when navigating between steps.
+  - Pre-fills form fields if the user revisits the form.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Responsive Design**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Works well on desktop, tablet, and mobile screens.
+  - Uses custom CSS and Bootstrap for layout and responsiveness.
 
-### `npm run eject`
+- **Enhanced UX**:
+  - Includes animations and transitions between steps using `react-transition-group`.
+  - Handles simulated network errors during submission.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ensure you have the following installed on your machine:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js
+- npm (Node Package Manager)
 
-## Learn More
+### Steps to Run the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Clone the Repository**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   git clone https://github.com/samdeopa/multi-step-form-app.git
+   cd multi-step-form-app
+   ```
 
-### Code Splitting
+2. **Install Dependencies**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. **Start the Development Server**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm start
+   ```
 
-### Making a Progressive Web App
+   This will start the application on `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Run Unit Tests**:
 
-### Advanced Configuration
+   To run unit tests for critical components:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   npm test
+   ```
 
-### Deployment
+5. **Build the Application** (for production):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm run build
+   ```
 
-### `npm run build` fails to minify
+   This will create a production-ready build in the `build` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Usage
+
+1. **Fill in the Form**: Navigate through the steps to input your personal and address information. Use the "Next" and "Back" buttons to move between steps.
+2. **Review and Submit**: In the final step, review your entered data and click "Submit" to complete the form submission.
+3. **Error Handling**: If there are errors during submission (e.g., simulated network failure), an alert will inform you. You can retry submitting the form.
+4. **Responsive Design**: The form is responsive and adapts to different screen sizes.
+
+## File Structure
+
+```plaintext
+multi-step-form-app/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Step1PersonalInfo.js
+│   │   ├── Step2AddressInfo.js
+│   │   ├── Step3Confirmation.js
+│   │   ├── Navigation.js
+│   │   └── ...
+│   ├── hooks/
+│   │   └── useFormValidation.js
+│   ├── utils/
+│   │   ├── localStorage.js
+│   │   └── ...
+│   ├── App.js
+│   ├── index.js
+│   ├── styles.css
+│   └── ...
+├── tests/
+│   ├── App.test.js
+│   ├── Step1PersonalInfo.test.js
+│   ├── Step2AddressInfo.test.js
+│   └── ...
+├── package.json
+└── README.md
+```
+
+## Design Decisions
+
+1. **State Management**: React's `useState` and `useEffect` hooks are used to manage the form data and to persist data in local storage. This ensures that the user's progress is saved even if they navigate away from the form.
+
+2. **Form Validation**: Custom hooks (`useFormValidation`) handle validation logic. Each step has its own validation criteria, and the form cannot proceed to the next step until all fields in the current step are valid.
+
+3. **User Experience**: To provide a seamless experience, transitions between steps are animated using `react-transition-group`. The form also simulates network errors during submission, mimicking real-world scenarios.
+
+4. **Error Handling**: Errors during form submission are handled gracefully, with users being alerted if something goes wrong. This ensures users are informed and can take corrective action.
+
+## Contributions
+
+Feel free to fork this project and submit a pull request if you'd like to contribute. All contributions are welcome!
+# multi-step-form

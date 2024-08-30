@@ -1,0 +1,26 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.feedback {
+  text-align: center;
+}
+
+.feedback button {
+  margin: 10px;
+}
+
+.error {
+  color: red;
+}

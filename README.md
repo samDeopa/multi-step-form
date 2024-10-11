@@ -70,15 +70,7 @@ Ensure you have the following installed on your machine:
 
    This will start the application on `http://localhost:3000`.
 
-4. **Run Unit Tests**:
-
-   To run unit tests for critical components:
-
-   ```bash
-   npm test
-   ```
-
-5. **Build the Application** (for production):
+4. **Build the Application** (for production):
 
    ```bash
    npm run build
@@ -116,11 +108,6 @@ multi-step-form-app/
 │   ├── index.js
 │   ├── styles.css
 │   └── ...
-├── tests/
-│   ├── App.test.js
-│   ├── Step1PersonalInfo.test.js
-│   ├── Step2AddressInfo.test.js
-│   └── ...
 ├── package.json
 └── README.md
 ```
@@ -138,4 +125,5 @@ multi-step-form-app/
 ## Contributions
 
 Feel free to fork this project and submit a pull request if you'd like to contribute. All contributions are welcome!
+
 # multi-step-form

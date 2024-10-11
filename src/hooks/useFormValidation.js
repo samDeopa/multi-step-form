@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export const useFormValidation = () => {
   const [errors, setErrors] = useState({});
-
   const validateStep = (formData, step) => {
     const newErrors = {};
 
@@ -12,6 +11,8 @@ export const useFormValidation = () => {
       else if (!/\S+@\S+\.\S+/.test(formData.email))
         newErrors.email = "Email is invalid";
       if (!formData.phone) newErrors.phone = "Phone is required";
+      if (formData.phone.length < 10 || formData.phone.length > 10)
+        newErrors.phone = "Please Enter a valid Phone number of 10 Digits";
     } else if (step === 2) {
       if (!formData.address1) newErrors.address1 = "Address Line 1 is required";
       if (!formData.city) newErrors.city = "City is required";

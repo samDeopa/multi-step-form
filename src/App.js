@@ -5,7 +5,11 @@ import Step2AddressInfo from "./components/Step2AddressInfo";
 import Step3Confirmation from "./components/Step3Confirmation";
 import Navigation from "./components/Navigation";
 import { useFormValidation } from "./hooks/useFormValidation";
-import { saveToLocalStorage, loadFromLocalStorage } from "./utils/localStorage";
+import {
+  saveToLocalStorage,
+  loadFromLocalStorage,
+  resetLocalStorage,
+} from "./utils/localStorage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css"; // Custom styles
 
@@ -59,6 +63,8 @@ const App = () => {
           alert("Submission failed due to a network error. Please try again.");
         } else {
           alert("Form submitted successfully!");
+          resetLocalStorage();
+          window.location.reload();
         }
       }, 1000);
     }

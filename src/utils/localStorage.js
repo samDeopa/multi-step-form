@@ -6,3 +6,6 @@ export const loadFromLocalStorage = () => {
   const savedData = localStorage.getItem("multiStepFormData");
   return savedData ? JSON.parse(savedData) : null;
 };
+export const resetLocalStorage = () => {
+  localStorage.setItem("multiStepFormData", null);
+};
